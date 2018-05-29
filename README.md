@@ -39,7 +39,8 @@ None
 
   * **Code:** 200 OK
   
-  * **Content:** ```{
+  * **Content:** ```javascript
+{
 "message": "OK",
 "request_id": "b85b1c19-db64-49cb-bdcb-e8c60f51c004",
 "session_id": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.YWYwODg1YTYtNTIwMS00YWEwLWExYTYtZmY2MjFjMWU3MzZm.7faB9uCV9sXtVbAJoVJ_N6MXC1850fH90Cr0j-HCB4I",
@@ -59,7 +60,8 @@ None
 * **Error Response:**
 
   * **Code:** 500 Internal Server Error
-  * **Content:** ```{
+  * **Content:** ```javascript
+  {
 "message": "unable to process request",
 "request_id": "13e1881f-72e2-493d-8f52-6843cc3440fc",
 "session_id": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.YWYwODg1YTYtNTIwMS00YWEwLWExYTYtZmY2MjFjMWU3MzZm.7faB9uCV9sXtVbAJoVJ_N6MXC1850fH90Cr0j-HCB4I",
@@ -119,7 +121,7 @@ None
  * **Code:** 500 Internal Server Error
   * 
 **Content:** 
-```
+```javascript
 {
   "message": "unable to process request",
   "request_id": "724e51ce-7e93-4ed1-a221-0b93cc2aef80",
@@ -152,7 +154,7 @@ Edit a single person.
 * **Data Params**
 
 Only submit fields that needs to be edited.  Available fields are `first_name`,`last_name`,`email`,`phone_number`
-```
+```javascript
 {
   "first_name" : "Greatest",
   "last_name": "Ever",
@@ -164,7 +166,7 @@ Only submit fields that needs to be edited.  Available fields are `first_name`,`
 
   * **Code:** 200 OK
   * **Content:** 
-```
+```javascript
 {
   "message": "OK",
   "request_id": "9fd15aa0-0718-4eaf-ae98-22711d9e5252",
@@ -176,7 +178,7 @@ Only submit fields that needs to be edited.  Available fields are `first_name`,`
 
   * **Code:** 500 Internal Server Error
   * **Content:** 
-```
+```javascript
 {
 "message": "unable to process request",
 "request_id": "6147259f-7e82-47a9-99ac-cdb4275c2a35",
