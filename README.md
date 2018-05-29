@@ -56,7 +56,8 @@ None
         "birthday": "1983-01-05T00:00:00Z"
         },
         ...
-]}```
+]}
+```
 
 * **Error Response:**
 
@@ -69,7 +70,8 @@ None
 "session_id": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.YWYwODg1YTYtNTIwMS00YWEwLWExYTYtZmY2MjFjMWU3MzZm.7faB9uCV9sXtVbAJoVJ_N6MXC1850fH90Cr0j-HCB4I",
 "errors": [
     "An error has occured, please try again later"
-]}```
+]}
+```
 
 
 Show One Persons
