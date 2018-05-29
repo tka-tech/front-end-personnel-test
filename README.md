@@ -74,7 +74,7 @@ None
 ```
 
 
-Show One Persons
+Show One Person
 ----
 Returns json data about a single person.
 
