@@ -13,7 +13,7 @@ You are tasked to build an admin page for a personnel management system.  You ar
 3. Make at least two textfields editable, and submit the result back to the server when the user submits.  Be sure not to allow submits if no content was changed.
 
 ## APIs:
-API Base URL: https://melrose-frontend-challenge-api.us-west-2.elasticbeanstalk.com.  Please make sure to send your email address as the Authorization header with each API request.
+API Base URL: http://melrose-frontend-challenge-api.us-west-2.elasticbeanstalk.com.  Please make sure to send your email address as the Authorization header with each API request.
 
 Show All Persons
 ----
