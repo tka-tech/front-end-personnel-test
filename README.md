@@ -96,7 +96,7 @@ None
   * 
 **Content:** 
 
-```
+```javascript
 {
   "message": "OK",
   "request_id": "b85b1c19-db64-49cb-bdcb-e8c60f51c004",
