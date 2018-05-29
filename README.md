@@ -39,7 +39,8 @@ None
 
   * **Code:** 200 OK
   
-  * **Content:** ```javascript
+  * **Content:** 
+  ```javascript
 {
 "message": "OK",
 "request_id": "b85b1c19-db64-49cb-bdcb-e8c60f51c004",
@@ -60,7 +61,8 @@ None
 * **Error Response:**
 
   * **Code:** 500 Internal Server Error
-  * **Content:** ```javascript
+  * **Content:** 
+  ```javascript
   {
 "message": "unable to process request",
 "request_id": "13e1881f-72e2-493d-8f52-6843cc3440fc",
