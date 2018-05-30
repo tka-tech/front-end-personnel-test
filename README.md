@@ -80,7 +80,7 @@ Returns json data about a single person.
 
 * **URL**
 
-`/persons/:id`
+`/person/:id`
 
 * **Method:**
 
@@ -143,7 +143,7 @@ Edit a single person.
 
 * **URL**
 
-`/persons/:id`
+`/person/:id`
 
 * **Method:**
 
