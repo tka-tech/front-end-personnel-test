@@ -13,7 +13,62 @@ You are tasked to build an admin page for a personnel management system.  You ar
 3. Make at least two textfields editable, and submit the result back to the server when the user submits.  Be sure not to allow submits if no content was changed.
 
 ## APIs:
-API Base URL: http://melrose-frontend-challenge-api.us-west-2.elasticbeanstalk.com.  Please make sure to send your email address as the Authorization header with each API request.
+API Base URL: https://melrose-frontend-challenge-api.us-west-2.elasticbeanstalk.com.  Please have your application get an access token from the `GET /v2/access_token?email=:your_email_address` endpoint before calling any other apis.  The `access_token` returned from that is to be sent with all subsequent API calls as the `Authorization` header.
+
+Although in this case, the `access_token` will not expire, please do not assume that behavior and prefetch that outside of your app.  You must get obtain that token at the start of your app.
+
+Get Access Token
+---
+Return an access token to be used in subsequent API calls
+
+* **URL**
+
+`/v2/access_token?email=:your_email_address`
+
+* **Method:**
+
+`GET`
+
+*  **URL Params**
+
+email: Your email address
+
+None
+
+* **Data Params**
+
+None
+
+* **Success Response:**
+
+  * **Code:** 200 OK
+  
+  * **Content:** 
+```json
+{
+    "message": "OK",
+    "request_id": "f602dc5b-be44-485e-aea3-568577e839ed",
+    "session_id": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.YWYwODg1YTYtNTIwMS00YWEwLWExYTYtZmY2MjFjMWU3MzZm.7faB9uCV9sXtVbAJoVJ_N6MXC1850fH90Cr0j-HCB4I",
+    "data": {
+        "access_token": "REDACTED"
+    }
+}
+```
+
+* **Error Response:**
+
+  * **Code:** 401 Unauthorized
+  * **Content:** 
+```json
+{
+    "message": "unable to process request",
+    "request_id": "e9e6d3e3-e855-46eb-b898-b0d6b95e3c3e",
+    "session_id": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.YWYwODg1YTYtNTIwMS00YWEwLWExYTYtZmY2MjFjMWU3MzZm.7faB9uCV9sXtVbAJoVJ_N6MXC1850fH90Cr0j-HCB4I",
+    "errors": [
+        "An error has occured, please try again later"
+    ]
+}
+```
 
 Show All Persons
 ----
@@ -21,7 +76,7 @@ Returns json data about all persons.
 
 * **URL**
 
-`/persons`
+`/v2/persons`
 
 * **Method:**
 
@@ -40,7 +95,7 @@ None
   * **Code:** 200 OK
   
   * **Content:** 
-```javascript
+```json
 {
 "message": "OK",
 "request_id": "b85b1c19-db64-49cb-bdcb-e8c60f51c004",
@@ -63,7 +118,7 @@ None
 
   * **Code:** 500 Internal Server Error
   * **Content:** 
-```javascript
+```json
   {
 "message": "unable to process request",
 "request_id": "13e1881f-72e2-493d-8f52-6843cc3440fc",
@@ -80,7 +135,7 @@ Returns json data about a single person.
 
 * **URL**
 
-`/person/:id`
+`/v2/person/:id`
 
 * **Method:**
 
@@ -102,7 +157,7 @@ None
   * 
 **Content:** 
 
-```javascript
+```json
 {
   "message": "OK",
   "request_id": "b85b1c19-db64-49cb-bdcb-e8c60f51c004",
@@ -125,7 +180,7 @@ None
  * **Code:** 500 Internal Server Error
   * 
 **Content:** 
-```javascript
+```json
 {
   "message": "unable to process request",
   "request_id": "724e51ce-7e93-4ed1-a221-0b93cc2aef80",
@@ -143,7 +198,7 @@ Edit a single person.
 
 * **URL**
 
-`/person/:id`
+`/v2/person/:id`
 
 * **Method:**
 
@@ -158,7 +213,7 @@ Edit a single person.
 * **Data Params**
 
 Only submit fields that needs to be edited.  Available fields are `first_name`,`last_name`,`email`,`phone_number`
-```javascript
+```json
 {
   "first_name" : "Greatest",
   "last_name": "Ever",
@@ -170,7 +225,7 @@ Only submit fields that needs to be edited.  Available fields are `first_name`,`
 
   * **Code:** 200 OK
   * **Content:** 
-```javascript
+```json
 {
   "message": "OK",
   "request_id": "9fd15aa0-0718-4eaf-ae98-22711d9e5252",
@@ -182,7 +237,7 @@ Only submit fields that needs to be edited.  Available fields are `first_name`,`
 
   * **Code:** 500 Internal Server Error
   * **Content:** 
-```javascript
+```json
 {
 "message": "unable to process request",
 "request_id": "6147259f-7e82-47a9-99ac-cdb4275c2a35",
