@@ -13,7 +13,7 @@ You are tasked to build an admin page for a personnel management system.  You ar
 3. Make at least two textfields editable, and submit the result back to the server when the user submits.  Be sure not to allow submits if no content was changed.
 
 ## APIs:
-API Base URL: https://melrose-frontend-challenge-api.us-west-2.elasticbeanstalk.com.  Please have your application get an access token from the `GET /v2/access_token?email=:your_email_address` endpoint before calling any other apis.  The `access_token` returned from that is to be sent with all subsequent API calls as the `Authorization` header.
+API Base URL: https://melrose-frontend-challenge-api.us-west-2.elasticbeanstalk.com.  Please have your application get an access token from the `GET /v2/auth_token?email=:your_email_address` endpoint before calling any other apis.  The `access_token` returned from that is to be sent with all subsequent API calls as the `Authorization` header.
 
 Although in this case, the `access_token` will not expire, please do not assume that behavior and prefetch that outside of your app.  You must get obtain that token at the start of your app.
 
@@ -23,7 +23,7 @@ Return an access token to be used in subsequent API calls
 
 * **URL**
 
-`/v2/access_token?email=:your_email_address`
+`/v2/auth_token?email=:your_email_address`
 
 * **Method:**
 
